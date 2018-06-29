@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Orders" path="/api/Orders" id="fd03876d-2337-465f-8c7f-5b36bb18d1fb" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Orders" path="/api/Orders" id="fd03876d-2337-465f-8c7f-5b36bb18d1fb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="fd03876d-2337-465f-8c7f-5b36bb18d1fbfileName">%2Fapi%2FOrders</con:setting>
   </con:settings>
@@ -24,7 +24,7 @@
       <con:mediaType>text/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
-      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true"/>
     </con:representation>
     <con:representation type="RESPONSE">
       <con:mediaType>application/xml</con:mediaType>
@@ -74,11 +74,16 @@
       <con:mediaType>text/xml</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
-      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true"/>
     </con:representation>
     <con:request name="Request 1" id="0d93f26d-0634-44d1-922e-522630cad7f8" mediaType="application/json">
       <con:settings/>
+      <con:endpoint>https://nxt-tpi-qa-bi-api.azurewebsites.net</con:endpoint>
       <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
     </con:request>

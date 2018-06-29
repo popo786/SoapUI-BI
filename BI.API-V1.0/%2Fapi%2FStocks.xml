@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Stocks" path="/api/Stocks" id="549dfdca-a5d9-436a-be8f-41937928f74b" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Stocks" path="/api/Stocks" id="549dfdca-a5d9-436a-be8f-41937928f74b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="549dfdca-a5d9-436a-be8f-41937928f74bfileName">%2Fapi%2FStocks</con:setting>
   </con:settings>
@@ -24,7 +24,7 @@
       <con:mediaType>text/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
-      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true"/>
     </con:representation>
     <con:representation type="RESPONSE">
       <con:mediaType>application/xml</con:mediaType>
@@ -55,11 +55,16 @@
       <con:mediaType>text/xml</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
-      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true"/>
     </con:representation>
     <con:request name="Request 1" id="cebf4392-8d9c-4176-8391-c3378d3ffa30" mediaType="application/json">
       <con:settings/>
+      <con:endpoint>https://nxt-tpi-qa-bi-api.azurewebsites.net</con:endpoint>
       <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
     </con:request>

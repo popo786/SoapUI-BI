@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="835a9b7e-f70b-43d7-9353-f10925fbc900" name="BI.API V1.0" type="rest_ex" wadlVersion="https://swagger.io/swagger2/specification" definitionUrl="https://nxt-tpi-qa-bi-api.azurewebsites.net/swagger/docs/v1" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:interface xsi:type="con:RestService" id="835a9b7e-f70b-43d7-9353-f10925fbc900" name="BI.API V1.0" type="rest_ex" wadlVersion="https://swagger.io/swagger2/specification" definitionUrl="https://nxt-tpi-qa-bi-api.azurewebsites.net/swagger/docs/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:description xsi:nil="true"/>
   <con:settings>
     <con:setting id="835a9b7e-f70b-43d7-9353-f10925fbc900fileName">BI.API-V1.0</con:setting>

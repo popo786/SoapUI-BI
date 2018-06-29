@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Shifts" path="/api/Shifts" id="f394a528-1241-41f7-93d6-519d8b4a7dc9" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Shifts" path="/api/Shifts" id="f394a528-1241-41f7-93d6-519d8b4a7dc9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="f394a528-1241-41f7-93d6-519d8b4a7dc9fileName">%2Fapi%2FShifts</con:setting>
   </con:settings>
@@ -24,7 +24,7 @@
       <con:mediaType>text/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
-      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true"/>
     </con:representation>
     <con:representation type="RESPONSE">
       <con:mediaType>application/xml</con:mediaType>
@@ -42,11 +42,16 @@
       <con:mediaType>text/xml</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
-      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true"/>
     </con:representation>
     <con:request name="Request 1" id="2e959c7d-a7ae-401c-8b96-2e8f0d216ae8" mediaType="application/json">
       <con:settings/>
+      <con:endpoint>https://nxt-tpi-qa-bi-api.azurewebsites.net</con:endpoint>
       <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
     </con:request>
