@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="d5695a83-da06-4a31-bf3d-870bf285c414" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Scripts/DispensedDate TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/Scripts/DispensedDate] located at [/Scripts/DispensedDate]</con:description>
+  <con:settings>
+    <con:setting id="d5695a83-da06-4a31-bf3d-870bf285c414fileName">%2FScripts%2FDispensedDate-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="0942661f-cf90-4c54-ab0e-fe5821d44fef">
+    <con:settings/>
+    <con:config service="BI API V1.1" resourcePath="/v1.1/Scripts/DispensedDate" methodName="DispensedDate" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="68c45a1c-6eaf-4621-81b5-91cdd27e439b" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

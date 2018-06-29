@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="7559e729-a285-43fb-8b8b-af984de006b2" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Scripts TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/Scripts] located at [/Scripts]</con:description>
+  <con:settings>
+    <con:setting id="7559e729-a285-43fb-8b8b-af984de006b2fileName">%2FScripts-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="0c8952cc-5e14-4f6c-93fa-e0709b3b2d04">
+    <con:settings/>
+    <con:config service="BI API V1.1" resourcePath="/v1.1/Scripts" methodName="Scripts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="6f06fbcd-5b08-4adf-b0ef-3aed78156892" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

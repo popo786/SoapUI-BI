@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="9f67f452-7392-47f3-b4e4-80b6a8b825d9" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products/Barcode/{barcode} TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/Products/Barcode/{barcode}] located at [/Products/Barcode/{barcode}]</con:description>
+  <con:settings>
+    <con:setting id="9f67f452-7392-47f3-b4e4-80b6a8b825d9fileName">%2FProducts%2FBarcode%2F%7Bbarcode%7D-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="21ac2298-796b-4957-a445-5027956a6d64">
+    <con:settings/>
+    <con:config service="BI API V1.1" resourcePath="/v1.1/Products/Barcode/{barcode}" methodName="ProductsByBarcode" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="04e2cb99-f5b1-4df4-b356-89f47ff12514" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

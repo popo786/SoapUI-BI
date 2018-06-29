@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="124abb84-a604-413c-bd19-f1beb419e57b" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products/Item/{itemId} TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/Products/Item/{itemId}] located at [/Products/Item/{itemId}]</con:description>
+  <con:settings>
+    <con:setting id="124abb84-a604-413c-bd19-f1beb419e57bfileName">%2FProducts%2FItem%2F%7BitemId%7D-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="74b4ea7f-b9a0-4ea8-b79c-9e3870cae789">
+    <con:settings/>
+    <con:config service="BI API V1.1" resourcePath="/v1.1/Products/Item/{itemId}" methodName="ProductsByItemId" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="3f5cd04e-4739-43e6-bd8f-00d03ce832e0" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b3321393-e022-444f-b7d5-5c2836ed8335" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/CategoryHierarchy TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/CategoryHierarchy] located at [/CategoryHierarchy]</con:description>
+  <con:settings>
+    <con:setting id="b3321393-e022-444f-b7d5-5c2836ed8335fileName">%2FCategoryHierarchy-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="d9ab0ce1-d1a7-4730-a97d-dd8c970acf7b">
+    <con:settings/>
+    <con:config service="BI API V1.1" resourcePath="/v1.1/CategoryHierarchy" methodName="CategoryHierarchy" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="d887d901-e0ee-491e-b886-7d1386a742a7" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

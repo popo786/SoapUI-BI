@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/Stocks" path="/Stocks" id="bd672d76-73a8-4614-ae66-5aa3cbdb61da" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="bd672d76-73a8-4614-ae66-5aa3cbdb61dafileName">%2FStocks</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Stocks" id="03bee53b-afc0-491b-826d-b37b01c092cb" method="GET">
+    <con:description>Get the product and stock details</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>ignoreZeroSoh</con:name>
+        <con:style>QUERY</con:style>
+        <con:description/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>FredAccessKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Access key related to the store</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{StoreNumber=AB1001, ItemId=112170, Description=CILAMOX CAP 250MG 20, SupplierId=API00001, SupplierName=Api Pty Ltd, Barcode=9316626601226, ProductId=5637157248, AppCatItemId=APC-153746, CategoryId=5637145849, CategoryName=Ethical Generic, DepartmentId=5637145800, DepartmentName=Ethical, MarkupPercent=0.0, RetailPriceExGST=6.95, RetailPrice=7.49, Cost=1.38, AverageCost=1.690265, SOHQty=30.0}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent><![CDATA[<Stock>
+   <StoreNumber>string</StoreNumber>
+   <ItemId>string</ItemId>
+   <Description>string</Description>
+   <SupplierId>string</SupplierId>
+   <SupplierName>string</SupplierName>
+   <Barcode>string</Barcode>
+   <ProductId>0</ProductId>
+   <AppCatItemId>string</AppCatItemId>
+   <CategoryId>0</CategoryId>
+   <CategoryName>string</CategoryName>
+   <DepartmentId>0</DepartmentId>
+   <DepartmentName>string</DepartmentName>
+   <MarkupPercent>1.100000023841858</MarkupPercent>
+   <RetailPriceExGST>1.100000023841858</RetailPriceExGST>
+   <RetailPrice>1.100000023841858</RetailPrice>
+   <Cost>1.100000023841858</Cost>
+   <AverageCost>1.100000023841858</AverageCost>
+   <SOHQty>1.100000023841858</SOHQty>
+</Stock>]]></con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent>"string"</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent>&lt;string>string&lt;/string></con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/xml</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>403</con:status>
+      <con:params/>
+      <con:sampleContent>{
+  "Error" : {
+    "MessageCode" : "Error",
+    "MessageType" : "Error",
+    "Message" : "string",
+    "ErrorDetails" : { }
+  },
+  "CorrelationId" : "00000000-0000-0000-0000-000000000000",
+  "ResponseDateTime" : "2015-07-20T15:49:04-07:00",
+  "ApiVersion" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>403</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>403</con:status>
+      <con:params/>
+      <con:sampleContent><![CDATA[<ApiErrorResponse>
+   <ApiError>
+      <MessageCode>Error</MessageCode>
+      <MessageType>Error</MessageType>
+      <Message>string</Message>
+      <ErrorDetails/>
+   </ApiError>
+   <CorrelationId>00000000-0000-0000-0000-000000000000</CorrelationId>
+   <ResponseDateTime>2015-07-20T15:49:04-07:00</ResponseDateTime>
+   <ApiVersion>string</ApiVersion>
+</ApiErrorResponse>]]></con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/xml</con:mediaType>
+      <con:status>403</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/xml</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="729d3320-9e3a-4ba4-a324-1435dc06cf21" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://nxt-tpi-qa-bi-v-api.azurewebsites.net</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

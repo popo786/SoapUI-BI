@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="53f8cc67-64d8-46c0-a2b8-5f340ce32462" name="BI API V1.1 TestSuite" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test suite generated for the REST service [BI API V1.1]</con:description>
+  <con:settings>
+    <con:setting id="53f8cc67-64d8-46c0-a2b8-5f340ce32462fileName">BI-API-V1.1-TestSuite</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties>
+    <con:property>
+      <con:name>LLGStoreFredAccessKeyV1.1</con:name>
+      <con:value>pginQvVrHaf6yfyvbm6FjQh0iawPJRv52o/7IYr+TB+Ngv+W7dyTnPH9XUNcs2nz4LlZp0/7MsiU1TzQKyUgQO</con:value>
+    </con:property>
+    <con:property>
+      <con:name>fromDate</con:name>
+      <con:value>2018-01-01</con:value>
+    </con:property>
+    <con:property>
+      <con:name>toDate</con:name>
+      <con:value>${=def now = new Date();now.format("yyyy-MM-dd")}</con:value>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+</con:testSuite>
