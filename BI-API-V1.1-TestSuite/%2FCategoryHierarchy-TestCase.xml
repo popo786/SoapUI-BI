@@ -4,20 +4,59 @@
   <con:settings>
     <con:setting id="b3321393-e022-444f-b7d5-5c2836ed8335fileName">%2FCategoryHierarchy-TestCase</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Request 1" id="d9ab0ce1-d1a7-4730-a97d-dd8c970acf7b">
+  <con:testStep type="restrequest" name="FredInvalidAccessKey" id="c355f54a-beb6-4185-96b8-db78d4eae52f">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/CategoryHierarchy" methodName="CategoryHierarchy" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Request 1" id="d887d901-e0ee-491e-b886-7d1386a742a7" mediaType="application/json">
-        <con:settings/>
+      <con:restRequest name="FredInvalidAccessKey" id="d887d901-e0ee-491e-b886-7d1386a742a7" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/CategoryHierarchy</con:originalUri>
+        <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error" id="faae79b0-5077-4cd0-bcc5-903770e3dc4d">
+          <con:configuration>
+            <Header>#status#</Header>
+            <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
-        <con:parameters/>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="FredValidAccessKey" id="d9ab0ce1-d1a7-4730-a97d-dd8c970acf7b">
+    <con:settings/>
+    <con:config service="BI API V1.1" resourcePath="/v1.1/CategoryHierarchy" methodName="CategoryHierarchy" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="FredValidAccessKey" id="d887d901-e0ee-491e-b886-7d1386a742a7" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/CategoryHierarchy</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>c355f54a-beb6-4185-96b8-db78d4eae52f</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>

@@ -4,20 +4,64 @@
   <con:settings>
     <con:setting id="13c29bcc-1d96-4a4c-ab0e-4c1c0c885ed8fileName">%2FStocks-TestCase</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Request 1" id="75f2d233-43c5-4d7c-8804-4100ac855160">
+  <con:testStep type="restrequest" name="FredInvalidAccessKey" id="f3870265-73a6-42e1-bef8-224a88449ba6">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Stocks" methodName="Stocks" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Request 1" id="729d3320-9e3a-4ba4-a324-1435dc06cf21" mediaType="application/json">
+      <con:restRequest name="FredInvalidAccessKey" id="729d3320-9e3a-4ba4-a324-1435dc06cf21" mediaType="application/json">
         <con:settings/>
         <con:request/>
+        <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error" id="9faf3228-bea1-4647-8a67-37db021b66fa">
+          <con:configuration>
+            <Header>#status#</Header>
+            <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error1" id="2bf9dbad-cc09-40cb-83f4-4cf8f5009ef6">
+          <con:configuration>
+            <Header>#status#</Header>
+            <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
-        <con:parameters/>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="FredValidAccessKey" id="75f2d233-43c5-4d7c-8804-4100ac855160">
+    <con:settings/>
+    <con:config service="BI API V1.1" resourcePath="/v1.1/Stocks" methodName="Stocks" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="FredValidAccessKey" id="729d3320-9e3a-4ba4-a324-1435dc06cf21" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Stocks</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>f3870265-73a6-42e1-bef8-224a88449ba6</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>

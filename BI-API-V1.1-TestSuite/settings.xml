@@ -19,6 +19,14 @@
       <con:name>toDate</con:name>
       <con:value>${=def now = new Date();now.format("yyyy-MM-dd")}</con:value>
     </con:property>
+    <con:property>
+      <con:name>hierarchyTypeRetail</con:name>
+      <con:value>Retail</con:value>
+    </con:property>
+    <con:property>
+      <con:name>hierarchyTypeRobot</con:name>
+      <con:value>Robot</con:value>
+    </con:property>
   </con:properties>
   <con:reportParameters/>
 </con:testSuite>

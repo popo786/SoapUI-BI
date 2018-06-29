@@ -5,10 +5,40 @@
     <con:setting id="a717a4b1-d768-46b4-9d58-46f7d8e34253fileName">%2FShifts-TestCase</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="restrequest" name="Request 1" id="cec1d5cc-1f8c-4936-ba36-10517287bf5f">
+  <con:testStep type="restrequest" name="FredInvalidAccessKey" id="17d5e35d-927c-4566-8afa-86b3d4fa063d">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Shifts" methodName="POSShifts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Request 1" id="6c996762-b8bf-4f92-9791-f23434fed91d" mediaType="application/json">
+      <con:restRequest name="FredInvalidAccessKey" id="6c996762-b8bf-4f92-9791-f23434fed91d" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Shifts</con:originalUri>
+        <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error" id="08969134-b148-4d60-b70e-ec1cc885e2fd">
+          <con:configuration>
+            <Header>#status#</Header>
+            <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="fromDate" value="${#TestSuite#fromDate}"/>
+          <con:entry key="toDate" value="${#TestSuite#toDate}"/>
+          <con:entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="FredValidAccessKey" id="cec1d5cc-1f8c-4936-ba36-10517287bf5f">
+    <con:settings/>
+    <con:config service="BI API V1.1" resourcePath="/v1.1/Shifts" methodName="POSShifts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="FredValidAccessKey" id="6c996762-b8bf-4f92-9791-f23434fed91d" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -29,4 +59,9 @@
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>17d5e35d-927c-4566-8afa-86b3d4fa063d</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>

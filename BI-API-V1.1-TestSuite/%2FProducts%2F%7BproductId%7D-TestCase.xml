@@ -4,20 +4,55 @@
   <con:settings>
     <con:setting id="7f44ea68-26f4-4edb-aa47-c5d7c0750325fileName">%2FProducts%2F%7BproductId%7D-TestCase</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Request 1" id="b577beea-62cb-49dc-8548-5ae2e922532a">
+  <con:testStep type="restrequest" name="FredInvalidAccessKey" id="f38c61b7-b9f4-4296-b173-0ccb55c2cb72">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Products/{productId}" methodName="ProductsById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Request 1" id="6d55d960-5cc2-4593-965c-e3208070c1c0" mediaType="application/json">
+      <con:restRequest name="FredInvalidAccessKey" id="6d55d960-5cc2-4593-965c-e3208070c1c0" mediaType="application/json">
         <con:settings/>
+        <con:request/>
+        <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error" id="d2d76e70-e9fa-4d6f-8b74-6b4c89e1d100">
+          <con:configuration>
+            <Header>#status#</Header>
+            <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="FredValidAccessKey" id="b577beea-62cb-49dc-8548-5ae2e922532a">
+    <con:settings/>
+    <con:config service="BI API V1.1" resourcePath="/v1.1/Products/{productId}" methodName="ProductsById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="FredValidAccessKey" id="6d55d960-5cc2-4593-965c-e3208070c1c0" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
         <con:request/>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
-        <con:parameters/>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>f38c61b7-b9f4-4296-b173-0ccb55c2cb72</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>
