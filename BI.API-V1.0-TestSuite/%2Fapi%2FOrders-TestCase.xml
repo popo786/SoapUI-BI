@@ -4,12 +4,24 @@
   <con:settings>
     <con:setting id="33188142-2364-405c-848a-82a191bf7799fileName">%2Fapi%2FOrders-TestCase</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Request 1" id="422b8adf-113d-454b-94fb-5c628f8b0c4b">
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="FredInvalidAccessKeyTest" id="32a7fd27-9b4f-4dd9-9770-e301edb48370">
     <con:settings/>
     <con:config service="BI.API V1.0" resourcePath="/api/Orders" methodName="PurchaseOrders" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Request 1" id="0d93f26d-0634-44d1-922e-522630cad7f8" mediaType="application/json">
-        <con:settings/>
+      <con:restRequest name="FredInvalidAccessKeyTest" id="0d93f26d-0634-44d1-922e-522630cad7f8" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-api.azurewebsites.net/api/Orders</con:originalUri>
+        <con:assertion type="HTTP Header Equals" id="26861343-55a7-4e2f-9f8d-351942da74ea" name="HTTP Header Equals">
+          <con:configuration>
+            <Header>#status#</Header>
+            <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -21,6 +33,53 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
+  <con:testStep type="restrequest" name="FredValidAccessKeyTest" id="422b8adf-113d-454b-94fb-5c628f8b0c4b">
+    <con:settings/>
+    <con:config service="BI.API V1.0" resourcePath="/api/Orders" methodName="PurchaseOrders" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="FredValidAccessKeyTest" id="0d93f26d-0634-44d1-922e-522630cad7f8" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-api.azurewebsites.net/api/Orders</con:originalUri>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer" id="c3445412-ad8d-44c9-b6d7-9eec49099e2b">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>Orders TC Response V1.0</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>FredValidAccessKeyTest</con:sourceStep>
+        <con:sourcePath>$[*]</con:sourcePath>
+        <con:targetType>Orders TC Response V1.0</con:targetType>
+        <con:targetStep>#Project#</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>c3445412-ad8d-44c9-b6d7-9eec49099e2b</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>32a7fd27-9b4f-4dd9-9770-e301edb48370</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>

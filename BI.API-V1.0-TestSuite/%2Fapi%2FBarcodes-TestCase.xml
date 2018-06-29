@@ -4,12 +4,50 @@
   <con:settings>
     <con:setting id="f2106acf-0ebe-4195-8967-fbaef8cbef50fileName">%2Fapi%2FBarcodes-TestCase</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Request 1" id="5bde5c0f-3ea4-4c29-9dbb-f1053387b3b2">
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="FredInvalidAccessKeyTest" id="89d0d83f-ac9f-4d17-b89e-a8cc44d17ab3">
     <con:settings/>
     <con:config service="BI.API V1.0" resourcePath="/api/Barcodes" methodName="Barcodes" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Request 1" id="846f8540-0271-4975-b738-cd07c284cef9" mediaType="application/json">
-        <con:settings/>
+      <con:restRequest name="FredInvalidAccessKeyTest" id="846f8540-0271-4975-b738-cd07c284cef9" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-api.azurewebsites.net/api/Barcodes</con:originalUri>
+        <con:assertion type="HTTP Header Equals" id="2b824ea0-835d-4637-97d0-31a8978efda5" name="Verify HTTP Header Equals 401 Authentication Error">
+          <con:configuration>
+            <Header>#status#</Header>
+            <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="FredValidAccessKeyTest" id="5bde5c0f-3ea4-4c29-9dbb-f1053387b3b2">
+    <con:settings/>
+    <con:config service="BI.API V1.0" resourcePath="/api/Barcodes" methodName="Barcodes" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="FredValidAccessKeyTest" id="846f8540-0271-4975-b738-cd07c284cef9" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-api.azurewebsites.net/api/Barcodes</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7235807e-a2e8-436b-9b59-e1c573a0b30c" name="Verify Valid HTTP Status Code (200)">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -21,6 +59,33 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer" id="a1f6f86d-3871-4902-b267-6b04232c492c">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>Barcodes TC Response V1.0</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>FredValidAccessKeyTest</con:sourceStep>
+        <con:sourcePath>$[*]</con:sourcePath>
+        <con:targetType>Barcodes TC Response V1.0</con:targetType>
+        <con:targetStep>#Project#</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>a1f6f86d-3871-4902-b267-6b04232c492c</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>89d0d83f-ac9f-4d17-b89e-a8cc44d17ab3</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>
