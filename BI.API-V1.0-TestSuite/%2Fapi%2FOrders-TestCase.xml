@@ -14,7 +14,7 @@
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-api.azurewebsites.net/api/Orders</con:originalUri>
-        <con:assertion type="HTTP Header Equals" id="26861343-55a7-4e2f-9f8d-351942da74ea" name="HTTP Header Equals">
+        <con:assertion type="HTTP Header Equals" id="26861343-55a7-4e2f-9f8d-351942da74ea" name="Verify HTTP Header Equals 401 Authentication Error">
           <con:configuration>
             <Header>#status#</Header>
             <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
@@ -28,7 +28,7 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1}" xmlns="http://eviware.com/soapui/config"/>
+          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
@@ -42,6 +42,17 @@
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-api.azurewebsites.net/api/Orders</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="6da168aa-8ec2-4027-8021-5de00d32fb37">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time is within 10 seconds" id="c03b831e-dcb7-4bd3-ac0d-654f34f7aefa">
+          <con:configuration>
+            <SLA>10000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

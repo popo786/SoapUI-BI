@@ -4,21 +4,88 @@
   <con:settings>
     <con:setting id="e7f4dafa-18ec-493d-90bf-1f9f5ef01ec4fileName">%2Fapi%2FSales-TestCase</con:setting>
   </con:settings>
-  <con:testStep type="restrequest" name="Request 1" id="5eff1fff-f28c-4ea0-a353-e7060a53818e">
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="FredInvalidAccessKeyTest" id="9470500f-5234-453d-8bb5-7bda8926371f">
     <con:settings/>
     <con:config service="BI.API V1.0" resourcePath="/api/Sales" methodName="Sales" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Request 1" id="458fe382-da8c-4729-8a40-5cc08eeeebf4" mediaType="application/json">
-        <con:settings/>
+      <con:restRequest name="FredInvalidAccessKeyTest" id="0d93f26d-0634-44d1-922e-522630cad7f8" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-api.azurewebsites.net/api/Orders</con:originalUri>
+        <con:assertion type="HTTP Header Equals" id="26861343-55a7-4e2f-9f8d-351942da74ea" name="Verify HTTP Header Equals 401 Authentication Error">
+          <con:configuration>
+            <Header>#status#</Header>
+            <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
       </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="FredValidAccessKeyTest" id="c05f196e-b968-438d-9de3-5e3b41623fd1">
+    <con:settings/>
+    <con:config service="BI.API V1.0" resourcePath="/api/Sales" methodName="Sales" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="FredValidAccessKeyTest" id="0d93f26d-0634-44d1-922e-522630cad7f8" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-api.azurewebsites.net/api/Orders</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="6da168aa-8ec2-4027-8021-5de00d32fb37">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time is within 10 seconds" id="c03b831e-dcb7-4bd3-ac0d-654f34f7aefa">
+          <con:configuration>
+            <SLA>10000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer" id="b6135c69-6b65-49ce-b921-ebc83d2867da">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>Sales TC Response V1.0</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>FredValidAccessKeyTest</con:sourceStep>
+        <con:sourcePath>$[*]</con:sourcePath>
+        <con:targetType>Sales TC Response V1.0</con:targetType>
+        <con:targetStep>#Project#</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
     </con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>b6135c69-6b65-49ce-b921-ebc83d2867da</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>
