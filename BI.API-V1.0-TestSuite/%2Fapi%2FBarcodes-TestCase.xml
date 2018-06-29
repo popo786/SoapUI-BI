@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f2106acf-0ebe-4195-8967-fbaef8cbef50" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/api/Barcodes TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/api/Barcodes] located at [/api/Barcodes]</con:description>
+  <con:settings>
+    <con:setting id="f2106acf-0ebe-4195-8967-fbaef8cbef50fileName">%2Fapi%2FBarcodes-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="5bde5c0f-3ea4-4c29-9dbb-f1053387b3b2">
+    <con:settings/>
+    <con:config service="BI.API V1.0" resourcePath="/api/Barcodes" methodName="Barcodes" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="846f8540-0271-4975-b738-cd07c284cef9" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

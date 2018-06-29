@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b65af022-ffae-4956-9f57-a1f1a592ae75" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/api/Shifts TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>The test case generated for the REST resource [/api/Shifts] located at [/api/Shifts]</con:description>
+  <con:settings>
+    <con:setting id="b65af022-ffae-4956-9f57-a1f1a592ae75fileName">%2Fapi%2FShifts-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="restrequest" name="Request 1" id="164ab06f-1eeb-4b6f-aa70-3e29a46d3a17">
+    <con:settings/>
+    <con:config service="BI.API V1.0" resourcePath="/api/Shifts" methodName="POSShifts" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Request 1" id="2e959c7d-a7ae-401c-8b96-2e8f0d216ae8" mediaType="application/json">
+        <con:settings/>
+        <con:request/>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

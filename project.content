@@ -1,0 +1,10 @@
+BI.API-V1.0\%2Fapi%2FStocks.xml
+BI.API-V1.0\%2Fapi%2FBarcodes.xml
+BI.API-V1.0\%2Fapi%2FOrders.xml
+BI.API-V1.0\%2Fapi%2FSales.xml
+BI.API-V1.0\%2Fapi%2FShifts.xml
+BI.API-V1.0-TestSuite\%2Fapi%2FBarcodes-TestCase.xml
+BI.API-V1.0-TestSuite\%2Fapi%2FOrders-TestCase.xml
+BI.API-V1.0-TestSuite\%2Fapi%2FSales-TestCase.xml
+BI.API-V1.0-TestSuite\%2Fapi%2FShifts-TestCase.xml
+BI.API-V1.0-TestSuite\%2Fapi%2FStocks-TestCase.xml

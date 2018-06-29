@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Barcodes" path="/api/Barcodes" id="12092468-41b0-4488-9b6f-342918b4f056" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="12092468-41b0-4488-9b6f-342918b4f056fileName">%2Fapi%2FBarcodes</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="Barcodes" id="44a6fcc3-069b-43b2-84a8-db8b81713423" method="GET">
+    <con:description>Get the barcode information for all the products</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>FredAccessKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Access key related to the store</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{StoreNumber=AB1001, ItemId=702314, Barcode=8710103561972, BarcodeSetupId=EAN128}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent><![CDATA[<ItemBarcode>
+   <StoreNumber>string</StoreNumber>
+   <ItemId>string</ItemId>
+   <Barcode>string</Barcode>
+   <BarcodeSetupId>string</BarcodeSetupId>
+</ItemBarcode>]]></con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:request name="Request 1" id="846f8540-0271-4975-b738-cd07c284cef9" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

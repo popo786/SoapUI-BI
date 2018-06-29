@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Shifts" path="/api/Shifts" id="f394a528-1241-41f7-93d6-519d8b4a7dc9" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f394a528-1241-41f7-93d6-519d8b4a7dc9fileName">%2Fapi%2FShifts</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POSShifts" id="fc4de089-66fc-47c0-bfd3-92a209de765b" method="GET">
+    <con:description>Get the POS shifts details for given date range.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>FredAccessKey</con:name>
+        <con:style>HEADER</con:style>
+        <con:description>Access key related to the store</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent>{StoreNumber=AB1001, ShiftId=123, TerminalNumber=100001, StartDate=2017-12-07T14:30:00+00:00, EndDate=2017-12-07T20:00:45+00:00}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent><![CDATA[<Batch>
+   <StoreNumber>string</StoreNumber>
+   <ShiftId>0</ShiftId>
+   <TerminalNumber>string</TerminalNumber>
+   <StartDate>2015-07-20T15:49:04-07:00</StartDate>
+   <EndDate>2015-07-20T15:49:04-07:00</EndDate>
+</Batch>]]></con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:request name="Request 1" id="2e959c7d-a7ae-401c-8b96-2e8f0d216ae8" mediaType="application/json">
+      <con:settings/>
+      <con:request/>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>
