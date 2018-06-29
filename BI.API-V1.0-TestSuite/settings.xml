@@ -8,7 +8,7 @@
   <con:runType>SEQUENTIAL</con:runType>
   <con:properties>
     <con:property>
-      <con:name>LLGStoreFredAccessKeyV1</con:name>
+      <con:name>LLGStoreFredAccessKeyV1.0</con:name>
       <con:value>7b892f58-a111-4c53-8163-d394e2de5d63</con:value>
     </con:property>
   </con:properties>

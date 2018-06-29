@@ -59,7 +59,7 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1}" xmlns="http://eviware.com/soapui/config"/>
+          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.0}" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
