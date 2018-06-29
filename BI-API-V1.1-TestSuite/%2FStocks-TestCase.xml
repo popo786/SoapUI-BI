@@ -18,14 +18,6 @@
             <useRegEx>false</useRegEx>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error1" id="2bf9dbad-cc09-40cb-83f4-4cf8f5009ef6">
-          <con:configuration>
-            <Header>#status#</Header>
-            <Value>HTTP/1.1 401 Authentication has failed! One or more errors occurred.</Value>
-            <ignoreCase>false</ignoreCase>
-            <useRegEx>false</useRegEx>
-          </con:configuration>
-        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
