@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/ScriptsHistory" path="/api/ScriptsHistory" id="59d15ef1-6a6e-43d2-aee0-70587519d937" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="59d15ef1-6a6e-43d2-aee0-70587519d937fileName">%2Fapi%2FScriptsHistory</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="ScriptsHistory" id="083398f3-9588-4f9d-a928-fc59a0e607ba" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>FredAccessKey</con:name>
+        <con:value/>
+        <con:style>HEADER</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>fromDate</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>toDate</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/xml</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+    </con:representation>
+    <con:request name="Request 1" id="dcd8b259-c9d2-4516-a468-31590270d9ec" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://nxt-tpi-qa-bi-api.azurewebsites.net</con:endpoint>
+      <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>FredAccessKey</con:entry>
+        <con:entry>fromDate</con:entry>
+        <con:entry>toDate</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>
