@@ -11,6 +11,14 @@
       <con:name>LLGStoreFredAccessKeyV1.0</con:name>
       <con:value>7b892f58-a111-4c53-8163-d394e2de5d63</con:value>
     </con:property>
+    <con:property>
+      <con:name>fromDate</con:name>
+      <con:value>2018-01-01</con:value>
+    </con:property>
+    <con:property>
+      <con:name>toDate</con:name>
+      <con:value>${=def now = new Date();now.format("yyyy-MM-dd")}</con:value>
+    </con:property>
   </con:properties>
   <con:reportParameters/>
 </con:testSuite>

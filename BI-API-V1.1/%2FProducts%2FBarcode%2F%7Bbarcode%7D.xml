@@ -279,10 +279,12 @@
     <con:request name="Request 1" id="04e2cb99-f5b1-4df4-b356-89f47ff12514" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://nxt-tpi-qa-bi-v-api.azurewebsites.net</con:endpoint>
+      <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
     </con:request>
   </con:method>

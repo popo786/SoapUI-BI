@@ -30,6 +30,11 @@
         <con:parameters>
           <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
+        <con:parameterOrder>
+          <con:entry>FredAccessKey</con:entry>
+          <con:entry>fromDate</con:entry>
+          <con:entry>toDate</con:entry>
+        </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -59,11 +64,14 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.0}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="fromDate" value="${#TestSuite#fromDate}"/>
+          <con:entry key="toDate" value="${#TestSuite#toDate}"/>
+          <con:entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.0}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>FredAccessKey</con:entry>
-          <con:entry/>
+          <con:entry>fromDate</con:entry>
+          <con:entry>toDate</con:entry>
         </con:parameterOrder>
       </con:restRequest>
     </con:config>

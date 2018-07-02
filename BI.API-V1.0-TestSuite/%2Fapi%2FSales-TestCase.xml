@@ -30,6 +30,11 @@
         <con:parameters>
           <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
+        <con:parameterOrder>
+          <con:entry>FredAccessKey</con:entry>
+          <con:entry>fromDate</con:entry>
+          <con:entry>toDatw</con:entry>
+        </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>
