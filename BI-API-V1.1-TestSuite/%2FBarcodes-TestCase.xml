@@ -53,7 +53,7 @@
             <SLA>30000</SLA>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath Count" id="d3a9da2f-4092-4938-8e7f-756c8b43f1be" name="Verify Json response result count (number of records)">
+        <con:assertion type="JsonPath Count" id="d3a9da2f-4092-4938-8e7f-756c8b43f1be" name="Verify json response result count (number of records)">
           <con:configuration>
             <path>$[*]</path>
             <content>45621</content>
@@ -76,6 +76,11 @@
             <allowWildcards>false</allowWildcards>
             <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
             <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Binary Equals" id="0e1cc744-7180-4ade-b8bf-ab31f12957d2" name="Verify barcodes testcase response using binary file V1.0 = V1.1">
+          <con:configuration>
+            <patternFile>E:\Testing\SOAP UI Tests\Binary Files\BI Barcodes Response Binary File V1.0.dat</patternFile>
           </con:configuration>
         </con:assertion>
         <con:credentials>
