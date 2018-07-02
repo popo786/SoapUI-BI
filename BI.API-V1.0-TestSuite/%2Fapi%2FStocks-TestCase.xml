@@ -39,6 +39,7 @@
       <con:restRequest name="FredValidAccessKeyTest" id="0d93f26d-0634-44d1-922e-522630cad7f8" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="discardResponse">false</con:setting>
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-api.azurewebsites.net/api/Orders</con:originalUri>
@@ -50,7 +51,7 @@
         </con:assertion>
         <con:assertion type="Response SLA Assertion" name="Verify response time is within 10 seconds" id="c03b831e-dcb7-4bd3-ac0d-654f34f7aefa">
           <con:configuration>
-            <SLA>10000</SLA>
+            <SLA>20000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -62,6 +63,12 @@
           <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.0}" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
       </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="delay" name="Delay" id="d0828e9d-824c-4392-a625-6f7442b65b0f">
+    <con:settings/>
+    <con:config>
+      <delay>1000</delay>
     </con:config>
   </con:testStep>
   <con:testStep type="transfer" name="Property Transfer" id="588c6cb6-c342-4b48-afa2-607239fb136d">
@@ -83,4 +90,9 @@
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>d0828e9d-824c-4392-a625-6f7442b65b0f</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>
