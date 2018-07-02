@@ -13,6 +13,10 @@
         <con:style>HEADER</con:style>
         <con:description>Access key related to the store</con:description>
       </con:parameter>
+      <con:parameter>
+        <con:name/>
+        <con:style>QUERY</con:style>
+      </con:parameter>
     </con:parameters>
     <con:representation type="RESPONSE">
       <con:mediaType>application/json</con:mediaType>

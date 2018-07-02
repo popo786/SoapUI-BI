@@ -61,6 +61,10 @@
         <con:parameters>
           <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.0}" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
+        <con:parameterOrder>
+          <con:entry>FredAccessKey</con:entry>
+          <con:entry/>
+        </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>

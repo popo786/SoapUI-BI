@@ -65,12 +65,6 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="delay" name="Delay" id="d0828e9d-824c-4392-a625-6f7442b65b0f">
-    <con:settings/>
-    <con:config>
-      <delay>1000</delay>
-    </con:config>
-  </con:testStep>
   <con:testStep type="transfer" name="Property Transfer" id="588c6cb6-c342-4b48-afa2-607239fb136d">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -90,9 +84,4 @@
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
-  <con:breakPoints>
-    <con:testStepId>d0828e9d-824c-4392-a625-6f7442b65b0f</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
 </con:testCase>
