@@ -12,6 +12,7 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Scripts/DispensedDate</con:originalUri>
         <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error" id="c22ea2ad-dea3-430b-8548-7aa0853d6315">
           <con:configuration>
             <Header>#status#</Header>

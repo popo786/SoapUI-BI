@@ -53,6 +53,15 @@
             <SLA>30000</SLA>
           </con:configuration>
         </con:assertion>
+        <con:assertion type="JsonPath Count" id="efd1e1e0-63f2-4b2a-a241-37206be0fa55" name="Verify json response result count for barcodes (number of records)">
+          <con:configuration>
+            <path>$[*]</path>
+            <content>45621</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

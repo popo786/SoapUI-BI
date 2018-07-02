@@ -8,8 +8,11 @@
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Products/{productId}" methodName="ProductsById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="FredInvalidAccessKey" id="6d55d960-5cc2-4593-965c-e3208070c1c0" mediaType="application/json">
-        <con:settings/>
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Products/</con:originalUri>
         <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error" id="d2d76e70-e9fa-4d6f-8b74-6b4c89e1d100">
           <con:configuration>
             <Header>#status#</Header>

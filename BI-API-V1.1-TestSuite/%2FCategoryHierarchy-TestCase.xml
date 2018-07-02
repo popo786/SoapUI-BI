@@ -4,6 +4,7 @@
   <con:settings>
     <con:setting id="b3321393-e022-444f-b7d5-5c2836ed8335fileName">%2FCategoryHierarchy-TestCase</con:setting>
   </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="FredInvalidAccessKey" id="c355f54a-beb6-4185-96b8-db78d4eae52f">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/CategoryHierarchy" methodName="CategoryHierarchy" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -41,6 +42,42 @@
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/CategoryHierarchy</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="6e7d78d7-734b-489b-9c95-31a034219f7a">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="c022ae60-3632-4567-a974-d0f79c703075">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" name="Verify json response result count for category hierarchy top level(number of records)" id="59ecac4b-1074-473d-aa38-13ecbb3b6052">
+          <con:configuration>
+            <path>$[*]</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Simple NotContains" name="Verify response does not contain null (&quot;&quot;) values in a string record" id="f7bfa067-e918-43ad-a3c8-b70deb448737">
+          <con:configuration>
+            <token>{"StoreNumber":"","ShiftId":,"TerminalNumber":"","StartDate":"","EndDate":""}</token>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" name="Verify json response result count for category hierarchy 2nd level(number of records)" id="54cf38ef-48a1-4318-bd9d-37bed6508ec7">
+          <con:configuration>
+            <path>$[0]['NextLevel']</path>
+            <content>73</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -50,6 +87,23 @@
           <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}" xmlns="http://eviware.com/soapui/config"/>
         </con:parameters>
       </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer" id="87cf97c3-c0f8-40e9-a52c-525fd4fe3d3a">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>CategoryHierarchy Response V1.1</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>FredValidAccessKey</con:sourceStep>
+        <con:sourcePath>$[0]['ID']</con:sourcePath>
+        <con:targetType>hierarchyId</con:targetType>
+        <con:targetStep>#TestSuite#</con:targetStep>
+        <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
     </con:config>
   </con:testStep>
   <con:properties/>

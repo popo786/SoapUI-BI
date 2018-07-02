@@ -8,8 +8,11 @@
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/CategoryHierarchy/{Id}" methodName="CategoryHierarchyById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="FredInvalidAccessKey" id="fed81581-37c5-4e25-a0e4-3c1934a0b7c8" mediaType="application/json">
-        <con:settings/>
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/CategoryHierarchy/</con:originalUri>
         <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error" id="359b9f01-ad26-47ec-b940-878dc8557f29">
           <con:configuration>
             <Header>#status#</Header>
@@ -24,7 +27,8 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}"/>
+          <con:entry key="Id" value="${#TestSuite#hierarchyId}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
@@ -38,6 +42,33 @@
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/CategoryHierarchy/5637193715</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="1d5099b0-5a28-4007-b407-48793064a490">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="8edbd7a5-498c-4ebe-9b20-11b393f2f623">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" name="Verify json response result count for category hierarchy by Id (number of records)" id="b1cc13d6-9eaf-40d2-b6e4-ef75cb1ff3ac">
+          <con:configuration>
+            <path>$[0]</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Simple NotContains" name="Verify response does not contain null (&quot;&quot;) values in a string record" id="27178f50-13f3-4aac-b4b0-1a4ee4871c57">
+          <con:configuration>
+            <token>{"StoreNumber":"","ItemId":"","Barcode":"","BarcodeSetupId":""}</token>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -45,7 +76,7 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
           <con:entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}"/>
-          <con:entry key="Id" value="5637193715"/>
+          <con:entry key="Id" value="${#TestSuite#hierarchyId}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>

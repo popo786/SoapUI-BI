@@ -27,6 +27,14 @@
       <con:name>hierarchyTypeRobot</con:name>
       <con:value>Robot</con:value>
     </con:property>
+    <con:property>
+      <con:name>hierarchyName</con:name>
+      <con:value/>
+    </con:property>
+    <con:property>
+      <con:name>hierarchyId</con:name>
+      <con:value>5637192576</con:value>
+    </con:property>
   </con:properties>
   <con:reportParameters/>
 </con:testSuite>

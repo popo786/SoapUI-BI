@@ -53,7 +53,7 @@
             <SLA>30000</SLA>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath Count" id="d3a9da2f-4092-4938-8e7f-756c8b43f1be" name="Verify json response result count (number of records)">
+        <con:assertion type="JsonPath Count" id="d3a9da2f-4092-4938-8e7f-756c8b43f1be" name="Verify json response result count for barcodes (number of records)">
           <con:configuration>
             <path>$[*]</path>
             <content>45621</content>

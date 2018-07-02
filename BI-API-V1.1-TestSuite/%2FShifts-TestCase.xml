@@ -44,6 +44,38 @@
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Shifts</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="8a93c6b3-f777-4981-865e-dd7a99022221">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="e03affd5-3b12-4e44-aa6b-bdcced142017">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" name="Verify json response result count for shifts (number of records)" id="212746f9-b2b1-4ee3-ac89-da677a6e95b5">
+          <con:configuration>
+            <path>$[*]</path>
+            <content>205</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Simple NotContains" name="Verify response does not contain null (&quot;&quot;) values in a string record" id="d35ea827-77c9-450b-ab80-97b2093227e7">
+          <con:configuration>
+            <token>{"StoreNumber":"","ShiftId":,"TerminalNumber":"","StartDate":"","EndDate":""}</token>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Binary Equals" name="Verify shifts response using binary file V1.0 = V1.1" id="f67c339c-abff-4ba8-be23-417066a2b59c">
+          <con:configuration>
+            <patternFile>E:\Testing\SOAP UI Tests\Binary Files\BI Shifts Response Binary File V1.0.dat</patternFile>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

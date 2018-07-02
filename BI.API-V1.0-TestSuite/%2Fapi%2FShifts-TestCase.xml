@@ -60,6 +60,15 @@
             <SLA>30000</SLA>
           </con:configuration>
         </con:assertion>
+        <con:assertion type="JsonPath Count" id="78e23b12-08b7-43ae-987c-3b9d521d6562" name="Verify json response result count for shifts(number of records)">
+          <con:configuration>
+            <path>$[*]</path>
+            <content>205</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
