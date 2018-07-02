@@ -28,7 +28,9 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="fromDate" value="${#TestSuite#fromDate}"/>
+          <con:entry key="toDatw" value="${#TestSuite#toDate}"/>
+          <con:entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>FredAccessKey</con:entry>
@@ -53,9 +55,9 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" name="Verify response time is within 10 seconds" id="c03b831e-dcb7-4bd3-ac0d-654f34f7aefa">
+        <con:assertion type="Response SLA Assertion" name="Verify response time is within 30 seconds" id="c03b831e-dcb7-4bd3-ac0d-654f34f7aefa">
           <con:configuration>
-            <SLA>10000</SLA>
+            <SLA>30000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -64,8 +66,15 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.0}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="fromDate" value="${#TestSuite#fromDate}"/>
+          <con:entry key="toDate" value="${#TestSuite#toDate}"/>
+          <con:entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.0}"/>
         </con:parameters>
+        <con:parameterOrder>
+          <con:entry>FredAccessKey</con:entry>
+          <con:entry>fromDate</con:entry>
+          <con:entry>toDate</con:entry>
+        </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>

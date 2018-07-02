@@ -13,6 +13,14 @@
         <con:style>HEADER</con:style>
         <con:description>Access key related to the store</con:description>
       </con:parameter>
+      <con:parameter>
+        <con:name>fromDate</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>toDate</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
     </con:parameters>
     <con:representation type="RESPONSE">
       <con:mediaType>application/json</con:mediaType>
@@ -54,6 +62,11 @@
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>FredAccessKey</con:entry>
+        <con:entry>fromDate</con:entry>
+        <con:entry>toDate</con:entry>
+      </con:parameterOrder>
     </con:request>
   </con:method>
 </con:resource>

@@ -48,9 +48,9 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="5f540dcd-1dc2-4834-abc8-fb96bf71e575" name="Verify response time is within 10 seconds">
+        <con:assertion type="Response SLA Assertion" id="5f540dcd-1dc2-4834-abc8-fb96bf71e575" name="Verify response time is within 30 seconds">
           <con:configuration>
-            <SLA>10000</SLA>
+            <SLA>30000</SLA>
           </con:configuration>
         </con:assertion>
         <con:credentials>
