@@ -48,9 +48,34 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" name="Verify response time is within 10 seconds" id="6cf740d5-0dbd-447b-9f68-aeb043286fe7">
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="6cf740d5-0dbd-447b-9f68-aeb043286fe7">
           <con:configuration>
-            <SLA>10000</SLA>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" id="d3a9da2f-4092-4938-8e7f-756c8b43f1be" name="Verify Json response result count (number of records)">
+          <con:configuration>
+            <path>$[*]</path>
+            <content>45621</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Simple NotContains" id="f02ca11c-1186-4600-9eb9-9bafa002305f" name="Verify response does not contain null (&quot;&quot;) values in a string record">
+          <con:configuration>
+            <token>{"StoreNumber":"","ItemId":"","Barcode":"","BarcodeSetupId":""}</token>
+            <ignoreCase>false</ignoreCase>
+            <useRegEx>false</useRegEx>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="JsonPath Count" id="751a0ae9-6b08-485c-a48e-d3f61fa6da56" name="Verify header record = 1 (i.e. {&quot;StoreNumber&quot;:&quot;1019&quot;,&quot;ItemId&quot;:&quot;&quot;,&quot;Barcode&quot;:&quot;Barcode&quot;,&quot;BarcodeSetupId&quot;:&quot;EAN128&quot;})">
+          <con:configuration>
+            <path>$[0]</path>
+            <content>1</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
           </con:configuration>
         </con:assertion>
         <con:credentials>
