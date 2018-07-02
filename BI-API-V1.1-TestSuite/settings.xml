@@ -29,7 +29,7 @@
     </con:property>
     <con:property>
       <con:name>hierarchyName</con:name>
-      <con:value/>
+      <con:value>Retail Hierarchy</con:value>
     </con:property>
     <con:property>
       <con:name>hierarchyId</con:name>

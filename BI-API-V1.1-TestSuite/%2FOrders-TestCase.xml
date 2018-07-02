@@ -4,6 +4,7 @@
   <con:settings>
     <con:setting id="c97cee6b-0b19-460d-b5f6-1098c68482e4fileName">%2FOrders-TestCase</con:setting>
   </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="FredInvalidAccessKey" id="421a7379-21b7-4041-864e-f527afba0ce4">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Orders" methodName="Orders" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -27,7 +28,9 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="fromDate" value="${#TestSuite#fromDate}"/>
+          <con:entry key="toDate" value="${#TestSuite#toDate}"/>
+          <con:entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
@@ -40,13 +43,27 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Orders</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="76614a5a-2da6-41f3-b2bb-378c57771e77">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="1d999cfe-5f02-4867-9f9e-cb4266570277">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="fromDate" value="${#TestSuite#fromDate}"/>
+          <con:entry key="toDate" value="${#TestSuite#toDate}"/>
+          <con:entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>

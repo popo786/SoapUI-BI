@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="124abb84-a604-413c-bd19-f1beb419e57b" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products/Item/{itemId} TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="124abb84-a604-413c-bd19-f1beb419e57b" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products/Item/{itemId} TestCase" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:description>The test case generated for the REST resource [/Products/Item/{itemId}] located at [/Products/Item/{itemId}]</con:description>
   <con:settings>
     <con:setting id="124abb84-a604-413c-bd19-f1beb419e57bfileName">%2FProducts%2FItem%2F%7BitemId%7D-TestCase</con:setting>
   </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="FredInvalidAccessKey" id="57a83226-e8d2-4c06-8715-0033cf6ce1c4">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Products/Item/{itemId}" methodName="ProductsByItemId" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -40,6 +41,18 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Products/Item/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="4ba8e32a-9d94-41d0-b2fa-9dbeaf91bd2c">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="ea00fc94-9531-46ce-93f3-c93f17a5b838">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

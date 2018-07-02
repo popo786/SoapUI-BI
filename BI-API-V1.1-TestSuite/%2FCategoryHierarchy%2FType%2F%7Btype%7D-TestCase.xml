@@ -42,6 +42,17 @@
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/CategoryHierarchy/Type/Retail%20Hierarchy</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="cf7779e3-2cd0-471d-8a53-946d930a58c7">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="e0bb1c11-be5d-4e91-a402-13dbefa96856">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

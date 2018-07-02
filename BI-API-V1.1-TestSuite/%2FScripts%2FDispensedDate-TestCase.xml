@@ -42,6 +42,18 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Scripts/DispensedDate</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="7f5c6d10-e547-46a6-92b5-f721c256c1b8">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="e8e6c901-c6b0-45a5-b3c2-e584f26b1375">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

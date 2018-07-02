@@ -4,12 +4,16 @@
   <con:settings>
     <con:setting id="8ad63c47-2e61-4cf0-9ffa-2068654325f2fileName">%2FSales-TestCase</con:setting>
   </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="FredInvalidAccessKey" id="89201633-d458-4fb5-975b-56f67ee99f8f">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Sales" methodName="Sales" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="FredInvalidAccessKey" id="5b7213eb-9450-4306-9d00-c0cb962af472" mediaType="application/json">
-        <con:settings/>
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Sales</con:originalUri>
         <con:assertion type="HTTP Header Equals" name="Verify HTTP Header Equals 401 Authentication Error" id="0395f73a-ef25-4ec9-b674-ee9fe791375e">
           <con:configuration>
             <Header>#status#</Header>
@@ -24,7 +28,9 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="fromDate" value="${#TestSuite#fromDate}"/>
+          <con:entry key="toDate" value="${#TestSuite#toDate}"/>
+          <con:entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
@@ -37,13 +43,27 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
+        <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Sales</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="3f7b18e2-5c57-4a39-b456-c01b3e922906">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="c3d156ec-ba75-4663-880f-8a32e41846d4">
+          <con:configuration>
+            <SLA>50000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="fromDate" value="${#TestSuite#fromDate}"/>
+          <con:entry key="toDate" value="${#TestSuite#toDate}"/>
+          <con:entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>

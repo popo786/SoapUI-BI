@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="7f44ea68-26f4-4edb-aa47-c5d7c0750325" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products/{productId} TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="7f44ea68-26f4-4edb-aa47-c5d7c0750325" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products/{productId} TestCase" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:description>The test case generated for the REST resource [/Products/{productId}] located at [/Products/{productId}]</con:description>
   <con:settings>
     <con:setting id="7f44ea68-26f4-4edb-aa47-c5d7c0750325fileName">%2FProducts%2F%7BproductId%7D-TestCase</con:setting>
   </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="FredInvalidAccessKey" id="f38c61b7-b9f4-4296-b173-0ccb55c2cb72">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Products/{productId}" methodName="ProductsById" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -40,6 +41,17 @@
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
         <con:request/>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="57b880d3-8307-44d7-8987-40c47a81e48e">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="949acd5b-3e3b-4af7-a1e9-ef1c79f2762b">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

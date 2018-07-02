@@ -27,7 +27,8 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="name" value="${#TestSuite#hierarchyName}"/>
+          <con:entry key="FredAccessKey" value="${#Project#FredInvalidAccessKey}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
@@ -41,13 +42,25 @@
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/CategoryHierarchy/Name/9501%20GIFT%20CARDS</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="7ed16b6f-fde9-4bc1-9e90-924cfc26d3b9">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="30be5365-b7fc-46bf-b8c2-9ee21e4387c8">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}" xmlns="http://eviware.com/soapui/config"/>
+          <con:entry key="name" value="${#TestSuite#hierarchyName}"/>
+          <con:entry key="FredAccessKey" value="${#TestSuite#LLGStoreFredAccessKeyV1.1}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>

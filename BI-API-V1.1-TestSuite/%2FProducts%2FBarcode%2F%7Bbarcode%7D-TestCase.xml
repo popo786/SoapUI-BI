@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="9f67f452-7392-47f3-b4e4-80b6a8b825d9" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products/Barcode/{barcode} TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="9f67f452-7392-47f3-b4e4-80b6a8b825d9" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products/Barcode/{barcode} TestCase" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:description>The test case generated for the REST resource [/Products/Barcode/{barcode}] located at [/Products/Barcode/{barcode}]</con:description>
   <con:settings>
     <con:setting id="9f67f452-7392-47f3-b4e4-80b6a8b825d9fileName">%2FProducts%2FBarcode%2F%7Bbarcode%7D-TestCase</con:setting>
   </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="FredInvalidAccessKey" id="3256764a-4ef6-4c72-9ecb-e3487b7adab9">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Products/Barcode/{barcode}" methodName="ProductsByBarcode" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -41,6 +42,17 @@
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Products/Barcode/722252102003</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="53233838-ef7d-458f-8781-cf885e090a87">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="d4c01092-045f-491a-bbb2-0326fc3577d3">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>

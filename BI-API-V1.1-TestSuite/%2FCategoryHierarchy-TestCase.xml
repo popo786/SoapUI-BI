@@ -89,17 +89,28 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="Property Transfer" id="87cf97c3-c0f8-40e9-a52c-525fd4fe3d3a">
+  <con:testStep type="transfer" name="Property Transfer (hierarchyId and hierarchyName)" id="87cf97c3-c0f8-40e9-a52c-525fd4fe3d3a">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
-        <con:name>CategoryHierarchy Response V1.1</con:name>
+        <con:name>hierarchyId</con:name>
         <con:sourceType>Response</con:sourceType>
         <con:sourceStep>FredValidAccessKey</con:sourceStep>
         <con:sourcePath>$[0]['ID']</con:sourcePath>
         <con:targetType>hierarchyId</con:targetType>
         <con:targetStep>#TestSuite#</con:targetStep>
         <con:targetPath/>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>hierarchyName</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>FredValidAccessKey</con:sourceStep>
+        <con:sourcePath>$[0]['Name']</con:sourcePath>
+        <con:targetType>hierarchyName</con:targetType>
+        <con:targetStep>#TestSuite#</con:targetStep>
         <con:type>JSONPATH</con:type>
         <con:targetTransferType>JSONPATH</con:targetTransferType>
         <con:upgraded>true</con:upgraded>

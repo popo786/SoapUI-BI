@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="32b77087-6dfe-4c83-a360-cf9e849b935c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products TestCase" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="32b77087-6dfe-4c83-a360-cf9e849b935c" discardOkResults="false" failOnError="false" failTestCaseOnErrors="true" keepSession="false" name="/Products TestCase" searchProperties="true" timeout="0" disabled="true" xmlns:con="http://eviware.com/soapui/config">
   <con:description>The test case generated for the REST resource [/Products] located at [/Products]</con:description>
   <con:settings>
     <con:setting id="32b77087-6dfe-4c83-a360-cf9e849b935cfileName">%2FProducts-TestCase</con:setting>
   </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
   <con:testStep type="restrequest" name="FredInvalidAccessKey" id="90b492f6-5fdb-475d-8c58-375f75eca2cc">
     <con:settings/>
     <con:config service="BI API V1.1" resourcePath="/v1.1/Products" methodName="Products" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -41,6 +42,17 @@
         </con:settings>
         <con:request/>
         <con:originalUri>https://nxt-tpi-qa-bi-v-api.azurewebsites.net/v1.1/Products</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" name="Verify Valid HTTP Status Code (200)" id="926fe743-27a0-4092-94a4-a51eb03120df">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="Response SLA Assertion" name="Verify response time (within 30 seconds)" id="b4c0b2d2-49d7-4490-832d-1adb2c59ea0a">
+          <con:configuration>
+            <SLA>30000</SLA>
+          </con:configuration>
+        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
